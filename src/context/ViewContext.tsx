@@ -12,7 +12,7 @@ export const ViewContext = createContext<ViewContextProps>({
 
 export const ViewContextProvider = ({ children }: { children: ReactNode }) => {
   const [view, setView] = useState<"envelope" | "first" | "second" | "third">(
-    "first"
+    "envelope"
   );
 
   return (

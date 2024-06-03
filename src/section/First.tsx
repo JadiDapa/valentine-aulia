@@ -1,46 +1,61 @@
 import Marquee from "react-fast-marquee";
 import { motion } from "framer-motion";
+import HVCard from "../component/HVCard";
 
 const First = () => {
   return (
     <main
       style={{ backgroundImage: `url("/public/images/bg-p1.jpg")` }}
-      className="h-screen overflow-hidden bg-no-repeat bg-cover relative"
+      className="relative h-screen overflow-hidden bg-no-repeat bg-cover "
     >
+      {/* <audio
+        autoPlay
+        loop
+        controls
+        className="absolute bottom-0  -right-0 w-28"
+      >
+        <source
+          className="bg-pink-50"
+          src="/public/mp3/ipos.mp3"
+          type="audio/mpeg"
+        />
+      </audio> */}
       <motion.div
         initial={{ width: 2000 }}
         animate={{ width: 0 }}
-        className={`aspect-square rounded-full  bg-pink-200 absolute transition-all duration-[2s] z-50`}
+        transition={{ duration: 0.1 }}
+        className={`aspect-square rounded-full absolute transition-all duration-[2s] z-50`}
         style={{
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
         }}
       />
-      <div className="w-full flex justify-center">
-        <motion.img
-          initial={{ y: 0 }}
-          animate={{ y: 20 }}
-          transition={{ duration: 3 }}
-          src="/public/images/cloud3.svg"
-          className="rotate-180 w-full absolute -translate-y-[550px] z-40"
-          alt=""
-        />
-        <motion.img
-          initial={{ y: 0 }}
-          animate={{ y: 20 }}
-          transition={{ duration: 3 }}
-          src="/public/images/cloud2.svg"
-          className="rotate-180 w-full absolute -translate-y-[500px] translate-x-10 scale-110 z-30"
-          alt=""
-        />
+      <div className="relative flex justify-center w-full">
+        <motion.div
+          initial={{ y: -200, opacity: 0.2 }}
+          animate={{ y: -160, opacity: 1 }}
+          transition={{ duration: 0.3, ease: "easeInOut", delay: 1 }}
+          className="absolute z-40 w-full drop-shadow-sm"
+        >
+          <img src="/public/images/cloud3.svg" className="w-full" alt="" />
+        </motion.div>
+        <motion.div
+          initial={{ y: -150, opacity: 0.2 }}
+          animate={{ y: -110, opacity: 1 }}
+          transition={{ duration: 0.3, ease: "easeInOut", delay: 1.4 }}
+          className="absolute z-30 w-full scale-110 drop-shadow-sm"
+        >
+          <img src="/public/images/cloud2.svg" className="w-full" alt="" />
+        </motion.div>
       </div>
-      <div className="">hello</div>
+      <HVCard />
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 4, ease: "easeOut" }}
-        className="mt-12 w-12/3 -rotate-[35deg] translate-x-96 translate-y-96 scale-[70%]"
+        transition={{ duration: 1, ease: "easeOut", delay: 2 }}
+        className="w-[1300px] absolute scale-[70%] -bottom-3 -right-1/4 -rotate-[40deg]"
       >
         <Marquee
           pauseOnClick

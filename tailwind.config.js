@@ -4,6 +4,7 @@ export default {
   theme: {
     fontFamily: {
       riot: ["Protest Riot", "sans-serif"],
+      tangerine: ["Tangerine", "sans-serif"],
     },
     extend: {},
   },

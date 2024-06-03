@@ -9,7 +9,7 @@ const App = () => {
   const { view } = useContext(ViewContext) ?? { view: "envelope" };
 
   return (
-    <div className="overflow-hidden h-screen">
+    <div className="h-screen overflow-hidden">
       {view === "envelope" && <Envelope />}
       {view === "first" && <First />}
       {view === "second" && <Second />}
